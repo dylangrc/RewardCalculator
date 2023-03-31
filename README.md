@@ -13,7 +13,7 @@ A reward calculator api that calculates customers' rewards based on purchases.
 Using Maven, run `mvn package`
 
 ### Run 
-Start the application by running [RewardCalculatorApplication class] (src/main/java/com/dylan/rewardcalculator/RewardCalculatorApplication.class)
+Start the application by running [RewardCalculatorApplication class](src/main/java/com/dylan/rewardcalculator/RewardCalculatorApplication.java)
 
 The other option is to run `java -jar <your jar file>`
 
