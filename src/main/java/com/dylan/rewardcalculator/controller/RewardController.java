@@ -10,6 +10,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.time.temporal.ChronoField;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +25,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/customer")
 public class RewardController {
+
+  private static Logger logger = LoggerFactory.getLogger(RewardController.class);
 
   private RewardService rewardService;
 
@@ -68,6 +72,7 @@ public class RewardController {
 
   @ExceptionHandler(CustomerNotFoundException.class)
   public ResponseEntity<ErrorVO> exceptionHandlerCustomerNotFound(Exception ex) {
+    logger.error("Cannot find customer");
     ErrorVO errorVO = new ErrorVO();
     errorVO.setErrorCode(HttpStatus.NOT_FOUND.value());
     errorVO.setMessage(ex.getMessage());
@@ -76,6 +81,7 @@ public class RewardController {
 
   @ExceptionHandler(TimeOutOfBoundException.class)
   public ResponseEntity<ErrorVO> exceptionHandlerTimeOutOfBoundException(Exception ex) {
+    logger.error("Time out of bound");
     ErrorVO errorVO = new ErrorVO();
     errorVO.setErrorCode(HttpStatus.BAD_REQUEST.value());
     errorVO.setMessage(ex.getMessage());

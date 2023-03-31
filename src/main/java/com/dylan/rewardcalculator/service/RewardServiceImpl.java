@@ -47,6 +47,7 @@ public class RewardServiceImpl implements RewardService {
       monthRewardMap.compute(transactionMonthYear, (k, v) -> v == null ? reward : v + reward);
     }
 
+    // convert to list to make it ready to use by other teams
     List<MonthRewardVO> monthRewardVOList = monthRewardMap.entrySet().stream()
         .map(entry -> new MonthRewardVO(entry.getKey(), entry.getValue()))
         .collect(Collectors.toList());
