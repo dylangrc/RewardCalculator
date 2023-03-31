@@ -3,7 +3,7 @@
 A reward calculator api that calculates customers' rewards based on purchases.
 
 ## Main application
-- Technologies used - Spring Boot, Spring Data JPA, Swagger
+- Technologies used - Spring Boot, Spring Data JPA
 - Embedded Server - H2
 - Configuration file - application.properties
 - data.sql will be automatically populated during startup.
