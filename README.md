@@ -2,22 +2,21 @@
 
 A reward calculator api that calculates customers' rewards based on purchases.
 
-## Introduction
-### Main application
+## Main application
 - Technologies used - Spring Boot, Spring Data JPA, Swagger
 - Embedded Server - H2
 - Configuration file - application.properties
 - data.sql will be automatically populated during startup.
 
-### Build
+## Build
 Using Maven, run `mvn package`
 
-### Run 
+## Run 
 Start the application by running [RewardCalculatorApplication class](src/main/java/com/dylan/rewardcalculator/RewardCalculatorApplication.java)
 
 The other option is to run `java -jar <your jar file>`
 
-### API
+## API
 Only insert customer id, without specifying the end of period.
 
 localhost:8080/customer/reward/2
